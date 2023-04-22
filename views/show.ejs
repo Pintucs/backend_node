@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>show data</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body style="background-color: rgb(13, 13, 96);">
+    <div class="p-2 text-center">
+        <p class="fs-1 fw-bold text-white"> Welcome to my page</p>
+    </div>
+    <div class="navbar p-2">
+        <p class="fs-2 fw-bold text-white"> NodeJS Todo List </p>
+        <button class="btn btn-success btn-lg px-4 py-2"><a href="/insert"
+                style="text-decoration: none;color:rgb(243, 247, 243)">Click Here To Add Data</a></button>
+    </div>
+    </div>
+    <div class="alert alert-success">
+        <a href="/MyResume/Pintu_Kumar.pdf" class="btn btn-danger" download>My Resume is attached here...</a>
+    </div>
+    <div>
+        <table class="table table-dark text-center">
+            <tr class="">
+                <th class="p-3">User Name</th>
+                <th>Gmail</th>
+                <th>password</th>
+                <th>Action 1</th>
+                <th>Aution 2</th>
+            </tr>
+            <% user.forEach((user)=>{ %>
+                <tr scope="row" class="text-center">
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.gmail %>
+                    </td>
+                    <td>
+                        <%= user.password %>
+                    </td>
+                    <td><button class="btn btn-danger "><a href="/delete/<%=user.id %>"
+                                style="text-decoration: none">Delete Data</a></button></td>
+                    <td><button class="btn btn-warning "><a href="/edit/<%=user.id %>"
+                                style="text-decoration: none">Update Data</a></button></td>
+                </tr>
+                <% }) %>
+
+        </table>
+        <div class="alert alert-success">
+            <a href="https://github.com/Pintucs" class="btn btn-danger" download>Click here to show My code </a>
+        </div>
+    </div>
+</body>
+
+</html>
