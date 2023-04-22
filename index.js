@@ -2,6 +2,7 @@ const express=require("express");
 const app=express();
 const User=require('./models/dataModel')
 const path=require("path")
+const PORT=process.env.PORT || 4000
 
 
 require("./connection/bdConnection.js")
@@ -96,4 +97,4 @@ app.get('/delete/:id',async (req,res)=>{
 
 
 
-app.listen(4000); 
+app.listen(PORT); 
