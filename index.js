@@ -1,3 +1,5 @@
+const dotenv = require("dotenv")
+dotenv.config()
 const express=require("express");
 const app=express();
 const User=require('./models/dataModel')
@@ -30,7 +32,7 @@ app.use("/js",express.static(path.join(__dirname,'node_modules/bootstrap/dist/js
 
 
 
-//show data
+//show data page
 app.get("/",(res,resp)=>{
     User.find({},(error,result)=>{
     resp.render('show',{user:result})
