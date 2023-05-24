@@ -39,18 +39,10 @@ app.get("/",(res,resp)=>{
     })
 });
 
-
-
-
-
 // show insert page
 app.get("/insert",(req,res)=>{
     res.render("insert")
 })
-
-
-
-
 
 // post data
 app.post("/addData",async(req,res)=>{
@@ -64,9 +56,6 @@ app.post("/addData",async(req,res)=>{
    })
 })
 
-
-
-
 // //show data using id in edit.ejs
 app.get('/edit/:id', (req,res)=>{
     User.findById(req.params.id,(error,result)=>{
@@ -74,29 +63,16 @@ app.get('/edit/:id', (req,res)=>{
     })
 })
 
-
-
-
-
-
 //update data
 app.post('/update/:id',async (req,res)=>{
     await User.findByIdAndUpdate(req.params.id,req.body)
     res.redirect('/')
 })
 
-
-
-
-
-
 //delete data
 app.get('/delete/:id',async (req,res)=>{
     await User.findByIdAndDelete(req.params.id)
     res.redirect('/')
 })
-
-
-
 
 app.listen(PORT); 
